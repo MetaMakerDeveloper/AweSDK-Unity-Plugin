@@ -85,6 +85,7 @@ public class Example : UnityEngine.MonoBehaviour
 
         human.DidLoad(() =>
         {
+            PlayTTS("你好，我是小静");
             GameObject player = human.GetGameObject();
             player.AddComponent<Animator>();
             if (human.GetBaseInfo().Gender == Human.Gender.Male)
@@ -182,6 +183,48 @@ public class Example : UnityEngine.MonoBehaviour
             human.WearOutfits("cloth/nv_up_06","cloth/nv_tz_117_down");
             human.WearShoes("cloth/nv_shoes_98");
         }*/
+    }
+
+    async void PlayTTS(string text, string voiceName = "智能客服_静静")
+    {
+        string filePath = UnityEngine.Application.persistentDataPath + $"/tts";
+        string fileName = "human";
+        string result = await AweSDK.HttpTool.DownloadTTS(licenseManager.GenAuthString(), filePath, fileName, text, voiceName,70, 50);
+
+        try
+        {
+            var jsonObj = JObject.Parse(result);
+
+            if (jsonObj["err_code"].ToString() == "0")
+            {
+                string audioPath = jsonObj["audio_wav"].ToString();
+
+                PlayAudio(audioPath);
+                human.SetTTS(fileName);
+            }
+
+        }
+        catch (Exception e)
+        {
+        }
+    }
+
+    public void PlayAudio(string audioPath)
+    {
+        StartCoroutine(DownloadAudio(audioPath, (result) =>
+        {
+            AudioSource.PlayClipAtPoint(result[0] as AudioClip, this.transform.position, 1);
+        }));
+    }
+
+    IEnumerator DownloadAudio(string audioPath, Callback callback = null)
+    {
+        using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip("file://" + audioPath, AudioType.WAV))
+        {
+            yield return request.SendWebRequest();
+            AudioClip audioClip = ((DownloadHandlerAudioClip)request.downloadHandler).audioClip;
+            callback(audioClip);
+        }
     }
 
     public string GetFilePathWithParentDirectory(string fullPath)
