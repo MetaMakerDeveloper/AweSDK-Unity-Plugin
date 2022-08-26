@@ -6,6 +6,10 @@ using UnityEngine.UI;
 using AvatarDomain.ECS.Component;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
+using static HttpTools;
+using System;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class Example : UnityEngine.MonoBehaviour
 {
@@ -187,9 +191,9 @@ public class Example : UnityEngine.MonoBehaviour
 
     async void PlayTTS(string text, string voiceName = "智能客服_静静")
     {
-        string filePath = UnityEngine.Application.persistentDataPath + $"/tts";
-        string fileName = "human";
-        string result = await AweSDK.HttpTool.DownloadTTS(licenseManager.GenAuthString(), filePath, fileName, text, voiceName,70, 50);
+        string directoryPath = UnityEngine.Application.persistentDataPath + $"/tts";
+        string filePrefix = "human";
+        string result = await AweSDK.HttpTool.DownloadTTS(licenseManager.GenAuthString(), directoryPath, filePrefix, text, voiceName, 70, 50);
 
         try
         {
@@ -200,7 +204,7 @@ public class Example : UnityEngine.MonoBehaviour
                 string audioPath = jsonObj["audio_wav"].ToString();
 
                 PlayAudio(audioPath);
-                human.SetTTS(fileName);
+                human.SetTTS(filePrefix);
             }
 
         }
