@@ -17,8 +17,8 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 
 ## Document
 
-* [Quick Access]()
-* [Advanced Use]()
+* [Quick Access](https://help.metamaker.cn/528b/42b7/ebf7)
+* [Advanced Use](https://help.metamaker.cn/528b/42b7/1ec2)
 * [Resources Download]()
 
 ## Version
