@@ -15,6 +15,7 @@ public class Example : UnityEngine.MonoBehaviour
 {
     public Button DestroyBtn;
     public Button RebuildBtn;
+    public Button PlayBtn;
 
     private Context context;
     private Human human;
@@ -25,6 +26,7 @@ public class Example : UnityEngine.MonoBehaviour
         AvatarEngine.NativeAPI = new NativeAPI();
         DestroyBtn.onClick.AddListener(DestroyHuman);
         RebuildBtn.onClick.AddListener(Rebuild);
+        PlayBtn.onClick.AddListener(Play);
 
         context = AweSDK.Environment.Setup();
 
@@ -89,7 +91,6 @@ public class Example : UnityEngine.MonoBehaviour
 
         human.DidLoad(() =>
         {
-            PlayTTS("你好，我是小静");
             GameObject player = human.GetGameObject();
             player.AddComponent<Animator>();
             if (human.GetBaseInfo().Gender == Human.Gender.Male)
@@ -187,6 +188,12 @@ public class Example : UnityEngine.MonoBehaviour
             human.WearOutfits("cloth/nv_up_06","cloth/nv_tz_117_down");
             human.WearShoes("cloth/nv_shoes_98");
         }*/
+    }
+
+    void Play()
+    {
+        if (human != null)
+            PlayTTS("你好，我是小静");
     }
 
     async void PlayTTS(string text, string voiceName = "智能客服_静静")
