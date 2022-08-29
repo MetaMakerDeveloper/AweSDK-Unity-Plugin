@@ -7,11 +7,12 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 ## Quickstart
 
 1. Importing AweSDK.unitypackage 
-2. Download the provided costume and animation resources and unzip them
-3. Put the unpacked costume and animation resources into the specified path
-4. Replace the AppKey and AppSecret in the Example script 
-5. Binding Example Script
-6. Running Projects
+2. Unzip dahei.zip or xiaojing.zip and put it in the Project panel under Assets -> StreamingAssets -> media
+3. Download the provided costume and animation resources and unzip them
+4. Put the unpacked costume and animation resources into the specified path
+5. Replace the AppKey and AppSecret in the Example script 
+6. Binding Example Script
+7. Running Projects
 
 > Note: The Example script is already included in the AweSDK.unitypackage, so you don't need to reintroduce the
 
