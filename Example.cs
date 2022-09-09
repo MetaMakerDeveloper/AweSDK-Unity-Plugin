@@ -80,9 +80,9 @@ public class Example : UnityEngine.MonoBehaviour
         human.SetTarget("23202", 0.4769f);
         human.SetTarget("23503", -0.8489f);
 
-        human.WearHair("cloth/nv_tf_128");
-        human.WearOutfits("cloth/nv_up_06", "cloth/nv_tz_117_down");
-        human.WearShoes("cloth/nv_shoes_98");
+        human.WearHair("test/cloth/nv_tf_158");
+        human.WearOutfits("test/cloth/nv_tz_120_updown_d1");
+        human.WearShoes("test/cloth/nv_tz_80_shoes");
 
         human.WillLoad(() =>
         {
@@ -208,7 +208,7 @@ public class Example : UnityEngine.MonoBehaviour
 
             if (jsonObj["err_code"].ToString() == "0")
             {
-                string audioPath = jsonObj["audio_wav"].ToString();
+                string audioPath = jsonObj["audio_mp3"].ToString();
 
                 PlayAudio(audioPath);
                 human.SetTTS(filePrefix);
@@ -230,11 +230,19 @@ public class Example : UnityEngine.MonoBehaviour
 
     IEnumerator DownloadAudio(string audioPath, Callback callback = null)
     {
-        using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip("file://" + audioPath, AudioType.WAV))
+        using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip("file://" + audioPath, AudioType.MPEG))
         {
+            ((DownloadHandlerAudioClip)request.downloadHandler).compressed = false;
+            ((DownloadHandlerAudioClip)request.downloadHandler).streamAudio = true;
             yield return request.SendWebRequest();
-            AudioClip audioClip = ((DownloadHandlerAudioClip)request.downloadHandler).audioClip;
+            if (request.isNetworkError || request.isHttpError)
+            {
+                Debug.LogError(request.error);
+                yield break;
+            }
+            AudioClip audioClip = DownloadHandlerAudioClip.GetContent(request);
             callback(audioClip);
+
         }
     }
 

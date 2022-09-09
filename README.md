@@ -24,6 +24,11 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 
 ## Version
 
+### V1.0.1 (2022-09-09)
+
+* Increase network forensics
+* Modify AI broadcast API interface
+
 ### V1.0.0 (2022-08-22)
 
 * AweSDK.unitypackage for Unity is provided for development 
