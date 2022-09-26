@@ -10,6 +10,7 @@ using static HttpTools;
 using System;
 using UnityEngine.Networking;
 using System.Collections;
+using System.IO;
 
 public class Example : UnityEngine.MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class Example : UnityEngine.MonoBehaviour
         // Import and export json files
         /*string humanJson = File.ReadAllText("json文件路径");
         human = await Human.Create(context, humanJson);
+        // True if you want to write the required files to json, false if you want to save only the current human configuration.
         human.ToJson();*/
 
         //dahei demo
@@ -80,9 +82,9 @@ public class Example : UnityEngine.MonoBehaviour
         human.SetTarget("23202", 0.4769f);
         human.SetTarget("23503", -0.8489f);
 
-        human.WearHair("test/cloth/nv_tf_158");
-        human.WearOutfits("test/cloth/nv_tz_120_updown_d1");
-        human.WearShoes("test/cloth/nv_tz_80_shoes");
+        human.WearHair("cloth/nv_tf_128");
+        human.WearOutfits("cloth/nv_up_06", "cloth/nv_tz_117_down");
+        human.WearShoes("cloth/nv_shoes_98");
 
         human.WillLoad(() =>
         {

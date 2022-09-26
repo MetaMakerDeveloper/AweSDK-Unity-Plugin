@@ -20,9 +20,17 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 
 * [Quick Access](https://help.metamaker.cn/528b/42b7/ebf7)
 * [Advanced Use](https://help.metamaker.cn/528b/42b7/1ec2)
-* [Resources Download]()
+* [Resources Download](http://developer.metamaker.cn/)
+* [FAQ](https://console.baklib.com/~3cbb59/articles/77a4bbfb-355a-467e-bf9b-65bd55215813/preview)
 
 ## Version
+
+### V1.1.0 (2022-09-26)
+
+* Adding Resource Network Authentication
+* Add plug-ins and character models for android and ios platforms
+* Optimized the problem of slow loading characters
+* Modify the AI broadcast example code
 
 ### V1.0.1 (2022-09-09)
 
