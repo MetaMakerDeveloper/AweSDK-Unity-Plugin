@@ -16,6 +16,11 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 
 > Note: The Example script is already included in the AweSDK.unitypackage, so you don't need to reintroduce the
 
+## Download
+
+* release from [github: ![Latest release](https://img.shields.io/badge/release-v1.1.0-green.svg
+)](https://github.com/MetaMakerDeveloper/AweSDK-Unity-Plugin/releases/tag/v1.1.0)
+
 ## Document
 
 * [Quick Access](https://help.metamaker.cn/528b/42b7/ebf7)
@@ -37,10 +42,13 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 * Increase network forensics
 * Modify AI broadcast API interface
 
-### V1.0.0 (2022-08-22)
+### V1.0.0 (2022-08-22) 
 
 * AweSDK.unitypackage for Unity is provided for development 
 * Documentation and resources are provided
+* Only unpacked clothing resources can be used
+
+**Note: Version 1.0.0 is not recommended**
 
 ## NOTICE
 
