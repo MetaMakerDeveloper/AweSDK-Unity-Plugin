@@ -30,6 +30,13 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 
 ## Version
 
+### V1.2.0 (2022-10-26)
+
+* Increase the confidence judgment of face reconstruction
+* Fix the error of unzip() in AweSDK
+* Support android arm64 and ios 64-bit
+* Optimized the problem of slow loading characters
+
 ### V1.1.0 (2022-09-26)
 
 * Adding Resource Network Authentication
