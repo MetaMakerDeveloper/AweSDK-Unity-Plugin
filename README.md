@@ -18,8 +18,10 @@ This is a project based on Unity 2019.4.30f1 for quickly creating an AI digital 
 
 ## Download
 
-* release from [github: ![Latest release](https://img.shields.io/badge/release-v1.1.0-blue.svg
-)](https://github.com/MetaMakerDeveloper/AweSDK-Unity-Plugin/releases/tag/v1.1.0)
+* release from [github: ![Latest release](https://img.shields.io/badge/release-v1.2.0-blue.svg
+)](https://github.com/MetaMakerDeveloper/AweSDK-Unity-Plugin/releases/tag/v1.2.0)
+
+Only packages and resource files need to be downloaded
 
 ## Document
 
