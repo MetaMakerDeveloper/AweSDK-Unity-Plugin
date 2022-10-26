@@ -26,9 +26,8 @@ Only packages and resource files need to be downloaded
 ## Document
 
 * [Quick Access](https://help.metamaker.cn/528b/42b7/ebf7)
-* [Advanced Use](https://help.metamaker.cn/528b/42b7/1ec2)
 * [Resources Download](http://developer.metamaker.cn/)
-* [FAQ](https://console.baklib.com/~3cbb59/articles/77a4bbfb-355a-467e-bf9b-65bd55215813/preview)
+* [FAQ](https://help.metamaker.cn/528b/42b7/1712)
 
 ## Version
 
